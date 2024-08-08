@@ -1,0 +1,13 @@
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\config\MongoConfig.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\config\SwaggerConfig.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\controller\BlackJackController.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\controller\PlayerController.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\exception\EntityNotFoundException.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\exception\GlobalExceptionHandler.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\Game\Card.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\model\BlackJack.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\repository\BlackJackRepository.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\repository\PlayerRepository.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\S05T01Application.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\service\BlackJackService.java
+C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5_T1\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01\service\PlayerService.java
