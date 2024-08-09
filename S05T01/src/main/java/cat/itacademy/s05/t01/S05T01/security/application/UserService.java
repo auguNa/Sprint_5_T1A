@@ -1,15 +1,21 @@
 package cat.itacademy.s05.t01.S05T01.security.application;
 
+
+
 import cat.itacademy.s05.t01.S05T01.chips.data.Chips;
 import cat.itacademy.s05.t01.S05T01.chips.data.SpringChipsRepository;
 import cat.itacademy.s05.t01.S05T01.security.data.SpringUserRepository;
 import cat.itacademy.s05.t01.S05T01.security.data.User;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Mono;
+
+import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
+
 
 /**
  * Implements UserDetailsService in order to make it usable
@@ -18,10 +24,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Service
 @Transactional
-public class UserService implements UserDetailsService{
+public class UserService implements ReactiveUserDetailsService {
     private final SpringUserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final SpringChipsRepository chipsRepository;
+
     @Value("${chips.start-amount}")
     private Long chipsStartAmount;
 
@@ -32,22 +39,22 @@ public class UserService implements UserDetailsService{
         this.chipsRepository = chipsRepository;
     }
 
-    public void register(String username, String password, String firstName, String lastName) {
+    public Mono<Void> register(String username, String password, String firstName, String lastName) {
         String encodedPassword = this.passwordEncoder.encode(password);
-
         User user = new User(username, encodedPassword, firstName, lastName);
         Chips chips = new Chips(user, chipsStartAmount);
 
-        this.userRepository.save(user);
-        this.chipsRepository.save(chips);
-        System.out.println("New user: " + username + " has been created");
+        return this.userRepository.save(user)
+                .then(this.chipsRepository.save(chips))
+                .doOnSuccess(saved -> System.out.println("New user: " + username + " has been created"))
+                .then();
     }
 
     @Override
-    public User loadUserByUsername(String username) {
-        System.out.println(username + " is logged in");
+    public Mono<UserDetails> findByUsername(String username) {
         return this.userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException(username));
+                .switchIfEmpty(Mono.error(new UsernameNotFoundException("User not found: " + username)))
+                .cast(UserDetails.class);
     }
 }
 

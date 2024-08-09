@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b287a022-e836-49da-ab97-47019f8f727d" name="Changes" comment="" />
+    <list default="true" id="b287a022-e836-49da-ab97-47019f8f727d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/BlackJackControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/application/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/application/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/S05T01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/BlackjackServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/application/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/application/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/controller/RegistrationController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +57,12 @@
     &quot;assignee&quot;: &quot;auguNa&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/auguNa/Sprint5_T1.git&quot;,
-    &quot;accountId&quot;: &quot;8f2437da-cb32-4d77-a580-d46c9665d9d6&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/auguNa/Sprint_5_T1A.git",
+    "accountId": "8f2437da-cb32-4d77-a580-d46c9665d9d6"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -47,25 +76,25 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MySpringBootApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.S05T01Application.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.S05T01 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.S05T01 [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.S05T01.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/augus/Desktop/BCN ACTIVA/ITAcademy/SPRINT_5_T1 A&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.1724138&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MySpringBootApp.executor": "Run",
+    "Application.S05T01Application.executor": "Run",
+    "Maven.S05T01 [install].executor": "Run",
+    "Maven.S05T01 [site].executor": "Run",
+    "Maven.S05T01.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/augus/Desktop/BCN ACTIVA/ITAcademy/SPRINT_5_T1_A",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.1724138",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\augus\Desktop\BCN ACTIVA\ITAcademy\SPRINT_5\S05T01\src\main\java\cat\itacademy\s05\t01\S05T01" />

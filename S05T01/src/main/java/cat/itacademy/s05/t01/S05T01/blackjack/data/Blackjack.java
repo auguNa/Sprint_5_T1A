@@ -30,13 +30,14 @@ public class Blackjack {
     private User user;
 
     public Blackjack(){}
-    public Blackjack(BlackjackGame blackjackGame, Boolean gameDone, User user) {
+
+    public Blackjack(BlackjackGame blackjackGame, boolean gameDone, User user) {
         this.blackjackGame = blackjackGame;
         this.gameDone = gameDone;
         this.user = user;
     }
 
-    public BlackjackGame getBlackjackGame() {
+       public BlackjackGame getBlackjackGame() {
         return blackjackGame;
     }
 

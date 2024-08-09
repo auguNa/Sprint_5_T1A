@@ -11,8 +11,8 @@ import java.util.Optional;
 public interface BlackjackRepository extends ReactiveCrudRepository<Blackjack, Long> {
     Mono<Blackjack> findById(Long Id);
 
-    //get's the last game of specified user
-    Optional<Blackjack> findTopByUserAndGameDoneOrderByIdDesc(User user, Boolean gameDone);
+    // Gets the last game of specified user
+    Mono<Blackjack> findTopByUserAndGameDoneOrderByIdDesc(User user, Boolean gameDone);
 }
 
 

@@ -2,8 +2,7 @@ package cat.itacademy.s05.t01.S05T01.chips.data;
 
 import cat.itacademy.s05.t01.S05T01.security.data.User;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-
-import java.util.Optional;
+import reactor.core.publisher.Mono;
 
 /**
  * This is a magic interface, which is converted
@@ -14,5 +13,5 @@ import java.util.Optional;
  * like an abstract repository or a DAO!
  */
 public interface SpringChipsRepository extends ReactiveCrudRepository<Chips, Long> {
-    Optional<Chips> findByUser(User user);
+    Mono<Chips> findByUser(User user);
 }

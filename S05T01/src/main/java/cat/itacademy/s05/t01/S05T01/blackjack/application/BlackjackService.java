@@ -2,6 +2,7 @@ package cat.itacademy.s05.t01.S05T01.blackjack.application;
 
 import cat.itacademy.s05.t01.S05T01.blackjack.data.BlackjackRepository;
 import cat.itacademy.s05.t01.S05T01.blackjack.domain.*;
+import cat.itacademy.s05.t01.S05T01.blackjack.domain.enums.GameState;
 import cat.itacademy.s05.t01.S05T01.blackjack.domain.strategies.*;
 import cat.itacademy.s05.t01.S05T01.chips.application.ChipsService;
 import cat.itacademy.s05.t01.S05T01.security.data.SpringUserRepository;
@@ -10,8 +11,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import cat.itacademy.s05.t01.S05T01.blackjack.data.Blackjack;
+import reactor.core.publisher.Mono;
 
-import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 @Transactional
 @Service
@@ -29,96 +32,105 @@ public class BlackjackService {
         this.blackJackGameFactory = blackJackGameFactory;
     }
 
-    public BlackjackGame startOrContinueGame(String username, Long bet) {
-        var user = retrieveUser(username);
+    public Mono<BlackjackGame> startOrContinueGame(String username, Long bet) {
+        return retrieveUser(username)
+                .flatMap(user -> blackJackRepository.findTopByUserAndGameDoneOrderByIdDesc(user, false)
+                        .flatMap(blackjack -> {
+                            BlackjackGame existingGame = blackjack.getBlackjackGame();
+                            if (existingGame != null) {
+                                return Mono.just(existingGame);
+                            }
+                            // No existing game found, create a new one
+                            BlackjackGame newGame = blackJackGameFactory.create(bet);
+                            return chipsService.withdrawChips(username, bet)
+                                    .then(Mono.defer(() -> {
+                                        if (new InitializeGameStrategy().doAction(newGame)) {
+                                            return playerStandOrDealersTurn(username);
+                                        }
+                                        return Mono.just(newGame);
+                                    }))
+                                    .flatMap(finalGame -> blackJackRepository.save(new Blackjack(finalGame, false, user))
+                                            .thenReturn(finalGame));
+                        })
+                        .switchIfEmpty(Mono.defer(() -> {
+                            // No existing game found at all, create a new one
+                            BlackjackGame newGame = blackJackGameFactory.create(bet);
+                            return chipsService.withdrawChips(username, bet)
+                                    .then(Mono.defer(() -> {
+                                        if (new InitializeGameStrategy().doAction(newGame)) {
+                                            return playerStandOrDealersTurn(username);
+                                        }
+                                        return Mono.just(newGame);
+                                    }))
+                                    .flatMap(finalGame -> blackJackRepository.save(new Blackjack(finalGame, false, user))
+                                            .thenReturn(finalGame));
+                                })
+                        ));
+    }
 
-        //Check if a game for this user already exists
-        Optional<Blackjack> lastBlackJack = this.blackJackRepository.findTopByUserAndGameDoneOrderByIdDesc(user, false);
-        if (lastBlackJack.isPresent()) {
-            //Returns the BlackjackGame object of the last blackjack game that the player started
-            return lastBlackJack.get().getBlackjackGame();
-        }
+    public Mono<BlackjackGame> playerHit(String username) {
+        return retrieveBlackjack(username) // Get the current Blackjack object as Mono
+                .flatMap(blackjack -> {
+                    var blackjackGame = blackjack.getBlackjackGame(); // Retrieve the BlackjackGame from the Blackjack object
 
-        //Make new blackjackgame and place bet
-        var blackjackGame = blackJackGameFactory.create(bet);
+                    // Apply the HitStrategy
+                    if (new HitStrategy().doAction(blackjackGame)) {
+                        // Check if the game state requires standing or dealers turn
+                        if (blackjackGame.getGameState() == GameState.PLAYERLOSE) {
+                            // Chain to the playerStandOrDealersTurn method
+                            return playerStandOrDealersTurn(username);
+                        }
 
-        //Withdraws chips
-        this.chipsService.withdrawChips(username, bet);
+                        // Save the Blackjack object asynchronously and return the updated BlackjackGame
+                        return this.blackJackRepository.save(blackjack)
+                                .thenReturn(blackjackGame);
+                    } else {
+                        // Return an error if the hit action is not allowed
+                        return Mono.error(new RuntimeException("♣ ♦ ♥ ♠ Can't hit at this moment! ♠ ♥ ♦ ♣"));
+                    }
+                });
+    }
 
-        //Starts game
-        if (new InitializeGameStrategy().doAction(blackjackGame)) {
-            this.blackJackRepository.save(new Blackjack(blackjackGame, false, user));
+
+    public Mono<BlackjackGame> playerStandOrDealersTurn(String username) {
+        return retrieveBlackjack(username).flatMap(blackjack -> {
+            var blackjackGame = blackjack.getBlackjackGame();
+            new StandOrDealersTurnStrategy().doAction(blackjackGame);
+            return this.chipsService.payOut(username, blackjackGame.getGameState(), blackjackGame.getBet().getAmount())
+                    .then(Mono.defer(() -> {
+                        blackjack.setGameDone(true);
+                        return this.blackJackRepository.save(blackjack).thenReturn(blackjackGame);
+                    }));
+        });
+    }
+
+    public Mono<BlackjackGame> playerSurrender(String username) {
+        return retrieveBlackjack(username).flatMap(blackjack -> {
+            var blackjackGame = blackjack.getBlackjackGame();
+            new SurrenderStrategy().doAction(blackjackGame);
             return playerStandOrDealersTurn(username);
-        }
-
-        //Saves new blackjackgame in database
-        this.blackJackRepository.save(new Blackjack(blackjackGame, false, user));
-
-        return blackjackGame;
+        });
     }
 
-    public BlackjackGame playerHit(String username) {
-        var blackjackGame = retrieveBlackjack(username).getBlackjackGame();
-
-//        if (new HitStrategy().doAction(blackjackGame)) {
-//            if (blackjackGame.getGameState() == GameState.PLAYERLOSE) {
-//                return playerStandOrDealersTurn(username);
-//            }
-//        } else {
-//            throw new RuntimeException("♣ ♦ ♥ ♠ Can't hit at this moment! ♠ ♥ ♦ ♣");
-//        }
-
-        if (!new HitStrategy().doAction(blackjackGame)) {
-            return playerStandOrDealersTurn(username);
-        }
-
-        this.blackJackRepository.save(retrieveBlackjack(username));
-
-        return blackjackGame;
+    public Mono<BlackjackGame> playerDouble(String username) {
+        return retrieveBlackjack(username).flatMap(blackjack -> {
+            var blackjackGame = blackjack.getBlackjackGame();
+            return this.chipsService.withdrawChips(username, blackjackGame.getBet().getAmount()).then(Mono.defer(() -> {
+                if (new DoubleStrategy().doAction(blackjackGame)) {
+                    return this.blackJackRepository.save(blackjack).thenReturn(playerStandOrDealersTurn(username).block());
+                }
+                return Mono.error(new RuntimeException("Can't double at this moment!"));
+            }));
+        });
     }
 
-    public BlackjackGame playerStandOrDealersTurn(String username) {
-        var blackJack = retrieveBlackjack(username);
-        var blackjackGame = retrieveBlackjack(username).getBlackjackGame();
-
-        new StandOrDealersTurnStrategy().doAction(blackjackGame);
-
-        this.chipsService.payOut(username, blackjackGame.getGameState(), blackjackGame.getBet().getAmount());
-
-        blackJack.setGameDone(true);
-        this.blackJackRepository.save(blackJack);
-
-        return blackjackGame;
+    private Mono<User> retrieveUser(String username) {
+        return this.userRepository.findByUsername(username).switchIfEmpty(Mono.error(new UsernameNotFoundException("User with username: " + username + " does not exist!")));
     }
 
-    public BlackjackGame playerSurrender(String username) {
-        var blackjackGame = retrieveBlackjack(username).getBlackjackGame();
-
-        new SurrenderStrategy().doAction(blackjackGame);
-        return playerStandOrDealersTurn(username);
-    }
-
-    public BlackjackGame playerDouble(String username) {
-        var blackjackGame = retrieveBlackjack(username).getBlackjackGame();
-
-        this.chipsService.withdrawChips(username, blackjackGame.getBet().getAmount());
-
-        if (new DoubleStrategy().doAction(blackjackGame)) {
-            this.blackJackRepository.save(retrieveBlackjack(username));
-            return playerStandOrDealersTurn(username);
-        }
-        throw new RuntimeException("♣ ♦ ♥ ♠ Can't double at this moment!, You can only double when it's your first move ♠ ♥ ♦ ♣");
-    }
-
-    //gets the user object by username
-    private User retrieveUser(String username) {
-        return this.userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("♣ ♦ ♥ ♠ User with username: " + username + " does not exist! ♠ ♥ ♦ ♣"));
-    }
-
-    //gets the last Blackjack data object by username
-    private Blackjack retrieveBlackjack(String username) {
-        return this.blackJackRepository.findTopByUserAndGameDoneOrderByIdDesc(retrieveUser(username), false)
-                .orElseThrow(() -> new RuntimeException("♣ ♦ ♥ ♠ Game has not started yet! ♠ ♥ ♦ ♣"));
+    private Mono<Blackjack> retrieveBlackjack(String username) {
+        return retrieveUser(username).flatMap(user ->
+                this.blackJackRepository.findTopByUserAndGameDoneOrderByIdDesc(user, false).switchIfEmpty(Mono.error(new RuntimeException("Game has not started yet!")))
+        );
     }
 }
