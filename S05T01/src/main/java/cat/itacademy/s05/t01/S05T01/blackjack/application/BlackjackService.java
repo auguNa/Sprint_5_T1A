@@ -13,9 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import cat.itacademy.s05.t01.S05T01.blackjack.data.Blackjack;
 import reactor.core.publisher.Mono;
 
-import java.util.function.Function;
-import java.util.function.Supplier;
-
 @Transactional
 @Service
 public class BlackjackService {

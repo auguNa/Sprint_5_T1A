@@ -80,4 +80,3 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
         response.addHeader("Authorization", "Bearer " + token);
     }
 }
-
