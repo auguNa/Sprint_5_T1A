@@ -27,7 +27,6 @@ import java.util.Date;
 public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
     private final String secret;
     private final Integer expirationInMs;
-
     private final AuthenticationManager authenticationManager;
 
     public JwtAuthenticationFilter(

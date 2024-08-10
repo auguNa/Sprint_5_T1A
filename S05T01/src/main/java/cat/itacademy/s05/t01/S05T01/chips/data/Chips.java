@@ -1,36 +1,30 @@
 package cat.itacademy.s05.t01.S05T01.chips.data;
 
 import cat.itacademy.s05.t01.S05T01.security.data.User;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Date;
 
-@Entity
+
 @Table(name = "chips")
 public class Chips {
     @Id
     private Long id;
 
-    @OneToOne
-    @MapsId
+    @Column("user")
     private User user;
 
     @Column
     @Positive
     private Long amount;
 
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column
+    @Column("creation_date")
     private Date creationDate;
 
-    @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column
+    @Column("last_update")
     private Date lastUpdate;
 
     public Chips() {

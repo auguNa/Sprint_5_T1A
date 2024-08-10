@@ -5,34 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b287a022-e836-49da-ab97-47019f8f727d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/BlackJackControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/domain/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/chips/data/Chips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/config/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/config/MongoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/application/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/application/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/data/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/presentation/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/java/cat/itacademy/s05/t01/S05T01/security/presentation/filter/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/S05T01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/src/test/java/cat/itacademy/s05/t01/S05T01/BlackjackServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/application/BlackjackService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/Blackjack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/data/BlackjackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/blackjack/presentation/BlackJackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/application/ChipsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/SpringChipsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/presentation/ChipsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/Chips.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/chips/data/Chips.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/config/MongoConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/application/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/application/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/SpringUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/data/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/filter/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01/target/classes/cat/itacademy/s05/t01/S05T01/security/presentation/filter/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/css/maven-base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/css/maven-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/collapsed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/expanded.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/site/images/newwindow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/surefire-reports/TEST-cat.itacademy.s05.t01.S05T01.BlackJackControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/surefire-reports/TEST-cat.itacademy.s05.t01.S05T01.S05T01ApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/surefire-reports/cat.itacademy.s05.t01.S05T01.BlackJackControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/surefire-reports/cat.itacademy.s05.t01.S05T01.S05T01ApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/test-classes/cat/itacademy/s05/t01/S05T01/BlackJackControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01/target/test-classes/cat/itacademy/s05/t01/S05T01/S05T01ApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +74,12 @@
     &quot;assignee&quot;: &quot;auguNa&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/auguNa/Sprint_5_T1A.git",
-    "accountId": "8f2437da-cb32-4d77-a580-d46c9665d9d6"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/auguNa/Sprint_5_T1A.git&quot;,
+    &quot;accountId&quot;: &quot;8f2437da-cb32-4d77-a580-d46c9665d9d6&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>

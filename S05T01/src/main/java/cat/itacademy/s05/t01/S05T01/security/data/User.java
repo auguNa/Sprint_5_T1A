@@ -1,7 +1,8 @@
 package cat.itacademy.s05.t01.S05T01.security.data;
 
-import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,18 +20,20 @@ import java.util.List;
  * It implements UserDetails in order to make it usable
  * as login/registration model for Spring.
  */
-@Entity
-@Table(name = "users")
+@Table("users")
 public class User implements UserDetails {
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column("username")
     private String username;
+    @Column("password")
     private String password;
+    @Column("first_name")
     private String firstName;
+    @Column("last_name")
     private String lastName;
 
     public User() {

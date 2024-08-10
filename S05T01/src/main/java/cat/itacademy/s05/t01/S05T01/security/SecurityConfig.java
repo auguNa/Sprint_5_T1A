@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -19,10 +20,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
+
 public class SecurityConfig {
 
     public final static String LOGIN_PATH = "/login";
@@ -37,28 +41,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(AbstractHttpConfigurer::disable) // Use the new method to configure CORS
-                .csrf(AbstractHttpConfigurer::disable) // Use the new method to configure CSRF
-                .authorizeHttpRequests(authz -> authz
-                        .requestMatchers(HttpMethod.POST, REGISTER_PATH).permitAll()
-                        .requestMatchers(HttpMethod.POST, LOGIN_PATH).permitAll()
-                        .anyRequest().authenticated()
+                .authorizeHttpRequests(authorizeRequests ->
+                        authorizeRequests
+                                .anyRequest().authenticated()
                 )
-                .addFilterBefore(
-                        new JwtAuthenticationFilter(
-                                LOGIN_PATH,
-                                this.jwtSecret,
-                                this.jwtExpirationInMs,
-                                http.getSharedObject(AuthenticationManager.class)
-                        ),
-                        UsernamePasswordAuthenticationFilter.class
-                )
-                .addFilter(new JwtAuthorizationFilter(this.jwtSecret, http.getSharedObject(AuthenticationManager.class)))
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .formLogin(withDefaults());
 
         return http.build();
     }
-
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        return http.getSharedObject(AuthenticationManagerBuilder.class)
+                .build();
+    }
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

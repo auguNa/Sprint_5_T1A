@@ -1,7 +1,5 @@
 package cat.itacademy.s05.t01.S05T01.security.application;
 
-
-
 import cat.itacademy.s05.t01.S05T01.chips.data.Chips;
 import cat.itacademy.s05.t01.S05T01.chips.data.SpringChipsRepository;
 import cat.itacademy.s05.t01.S05T01.security.data.SpringUserRepository;

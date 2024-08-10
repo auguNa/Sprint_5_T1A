@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentEntity;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentProperty;
 
-@Configuration
+/*@Configuration
 public class MongoConfig {
     @Bean
     public MappingMongoConverter mappingMongoConverter(MongoMappingContext context, MongoCustomConversions conversions) {
@@ -19,4 +19,4 @@ public class MongoConfig {
         mappingConverter.setCustomConversions(conversions);
         return mappingConverter;
     }
-}
+}*/
